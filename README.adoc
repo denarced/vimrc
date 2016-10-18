@@ -1,4 +1,3 @@
 = vimrc
-denarced
 
 My .vimrc file for now.

@@ -39,7 +39,6 @@ let g:tagbar_autoclose = 1
 let g:syntastic_always_populate_loc_list = 1
 " Just trying whether this next line fixes jumping to errors in Go source files
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 " Otherwise exceedingly slow
 let g:syntastic_ignore_files = ['\.java$']
