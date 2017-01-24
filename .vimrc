@@ -19,6 +19,7 @@ vnoremap > >gv
 
 let xml_jump_string="_jmp_string_"
 
+autocmd Filetype asciidoc setlocal formatoptions-=c
 autocmd Filetype cpp setlocal equalprg=astyle
 autocmd Filetype go setlocal noexpandtab
 autocmd Filetype javascript setlocal autoindent equalprg=js-beautify\ -
