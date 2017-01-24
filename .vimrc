@@ -19,7 +19,9 @@ vnoremap > >gv
 
 let xml_jump_string="_jmp_string_"
 
+" Prevent new asterisk when line wraps, add it on enter
 autocmd Filetype asciidoc setlocal formatoptions-=c
+autocmd Filetype asciidoc setlocal formatoptions-=r
 autocmd Filetype cpp setlocal equalprg=astyle
 autocmd Filetype go setlocal noexpandtab
 autocmd Filetype javascript setlocal autoindent equalprg=js-beautify\ -
