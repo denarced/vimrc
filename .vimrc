@@ -78,6 +78,7 @@ Plug 'scrooloose/syntastic'
 Plug 'majutsushi/tagbar'
 Plug 'tomtom/tcomment_vim'
 Plug 'marijnh/tern_for_vim'
+Plug 'leafgarland/typescript-vim'
 Plug 'chrisbra/unicode.vim'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'fatih/vim-go', { 'tag': 'v1.7.1' }
