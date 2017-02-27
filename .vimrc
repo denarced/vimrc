@@ -40,12 +40,15 @@ let g:tagbar_autoclose = 1
 " Always show the list of warnings and errors
 " Not only for command :Errors
 let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_aggregate_errors = 1
 " Just trying whether this next line fixes jumping to errors in Go source files
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 " Otherwise exceedingly slow
 let g:syntastic_ignore_files = ['\.java$']
 let g:syntastic_go_checkers = ['go']
+
+let g:syntastic_python_checkers = ['python3', 'flake8', 'pylint']
 
 " Prevent jedi from automatically inserting the first method name when typing
 " dot
