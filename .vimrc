@@ -87,6 +87,7 @@ Plug 'Lokaltog/vim-easymotion'
 Plug 'fatih/vim-go', { 'tag': 'v1.7.1' }
 Plug 'elzr/vim-json'
 Plug 'ludovicchabant/vim-lawrencium'
+Plug 'mustache/vim-mustache-handlebars'
 Plug 'rodjek/vim-puppet'
 Plug 'derekwyatt/vim-scala'
 Plug 'tpope/vim-surround'
