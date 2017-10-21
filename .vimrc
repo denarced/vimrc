@@ -25,7 +25,7 @@ autocmd Filetype asciidoc setlocal formatoptions+=r
 autocmd Filetype cpp setlocal equalprg=astyle
 autocmd Filetype go setlocal noexpandtab
 autocmd Filetype javascript setlocal autoindent equalprg=js-beautify\ -
-autocmd FileType json setlocal equalprg=python\ -m\ json.tool
+autocmd FileType json setlocal equalprg=python3\ -m\ json.tool
 autocmd FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
 
 " Otherwise vim thinks ts files are xml files
@@ -72,8 +72,14 @@ endif
 " Run goimports on save instead of gofmt, it covers both
 let g:go_fmt_command = "goimports"
 
+" Use ag with ack
+if executable('ag')
+    let g:ackprg = 'ag --vimgrep'
+endif
+
 call plug#begin('~/.vim/plugged')
 
+Plug 'mileszs/ack.vim'
 Plug 'davidhalter/jedi-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'shawncplus/phpcomplete.vim'
