@@ -83,6 +83,7 @@ Plug 'ternjs/tern_for_vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'chrisbra/unicode.vim'
 Plug 'Lokaltog/vim-easymotion'
+Plug 'tpope/vim-fugitive'
 Plug 'fatih/vim-go', { 'tag': 'v1.7.1' }
 Plug 'elzr/vim-json'
 Plug 'ludovicchabant/vim-lawrencium'
