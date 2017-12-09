@@ -66,6 +66,11 @@ if executable('ag')
     let g:ackprg = 'ag --vimgrep'
 endif
 
+" tern_for_vim config
+let tern_map_keys = 1
+let tern_show_argument_hints = 1
+let tern_show_signature_in_pum = 1
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'mileszs/ack.vim'
@@ -74,7 +79,7 @@ Plug 'davidhalter/jedi-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'shawncplus/phpcomplete.vim'
 Plug 'tomtom/tcomment_vim'
-Plug 'marijnh/tern_for_vim'
+Plug 'ternjs/tern_for_vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'chrisbra/unicode.vim'
 Plug 'Lokaltog/vim-easymotion'
