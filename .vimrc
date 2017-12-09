@@ -31,6 +31,7 @@ autocmd Filetype go setlocal noexpandtab
 autocmd Filetype javascript setlocal autoindent equalprg=js-beautify\ -
 autocmd FileType json setlocal equalprg=python3\ -m\ json.tool\ --sort-keys
 autocmd FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
+autocmd FileType yaml setlocal shiftwidth=2 softtabstop=2 tabstop=2
 
 autocmd BufReadPost .babelrc set syntax=json
 
