@@ -13,6 +13,10 @@ set hlsearch
 set nowrapscan
 set nowrap
 
+" Persistent undo
+set undodir=~/.vim/undo/
+set undofile
+
 "Reselect visual block after indent/outdent
 vnoremap < <gv
 vnoremap > >gv
