@@ -3,6 +3,7 @@ set shiftwidth=4
 set softtabstop=4
 set tabstop=4
 set tw=80
+set backspace="indent,eol,start"
 
 set history=500
 set nocompatible
