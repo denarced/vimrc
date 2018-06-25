@@ -92,6 +92,7 @@ Plug 'fatih/vim-go', { 'tag': 'v1.17' }
 Plug 'elzr/vim-json'
 Plug 'ludovicchabant/vim-lawrencium'
 Plug 'mustache/vim-mustache-handlebars'
+Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['javascript', 'css', 'scss'] }
 Plug 'rodjek/vim-puppet'
 Plug 'derekwyatt/vim-scala'
 Plug 'tpope/vim-surround'
