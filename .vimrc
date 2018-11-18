@@ -3,7 +3,6 @@ set shiftwidth=4
 set softtabstop=4
 set tabstop=4
 set tw=80
-set backspace="indent,eol,start"
 
 set history=500
 set nocompatible
@@ -39,10 +38,6 @@ autocmd BufReadPost .babelrc set syntax=json
 " Otherwise vim thinks ts files are xml files
 autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
 
-
-" Prevent jedi from automatically inserting the first method name when typing
-" dot
-let g:jedi#popup_on_dot = 0
 
 " Enable html editing with xmledit plugin
 let g:xmledit_enable_html = 1
@@ -88,7 +83,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'chrisbra/unicode.vim'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'tpope/vim-fugitive'
-Plug 'fatih/vim-go', { 'tag': 'v1.17' }
+Plug 'fatih/vim-go', { 'tag': 'v1.19' }
 Plug 'elzr/vim-json'
 Plug 'ludovicchabant/vim-lawrencium'
 Plug 'mustache/vim-mustache-handlebars'
