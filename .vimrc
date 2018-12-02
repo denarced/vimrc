@@ -10,6 +10,9 @@ set ruler
 set showcmd
 
 set hlsearch
+" Works better on terminal with black background. At least can read highlighted
+" text.
+hi Search cterm=NONE ctermfg=black ctermbg=yellow
 set nowrapscan
 set nowrap
 
@@ -61,6 +64,7 @@ let g:go_fmt_command = "goimports"
 if executable('ag')
     let g:ackprg = 'ag --vimgrep'
 endif
+let g:ackpreview=1
 
 " tern_for_vim config
 let tern_map_keys = 1
