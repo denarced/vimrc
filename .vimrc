@@ -90,8 +90,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'fatih/vim-go', { 'tag': 'v1.19' }
 Plug 'elzr/vim-json'
 Plug 'ludovicchabant/vim-lawrencium'
+Plug 'joereynolds/vim-minisnip'
 Plug 'mustache/vim-mustache-handlebars'
-Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['javascript', 'css', 'scss'] }
+Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['javascript', 'css', 'scss', 'html'] }
 Plug 'rodjek/vim-puppet'
 Plug 'derekwyatt/vim-scala'
 Plug 'tpope/vim-surround'
