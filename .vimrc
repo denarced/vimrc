@@ -7,6 +7,8 @@ set tw=80
 set history=500
 set nocompatible
 set ruler
+set number
+set relativenumber
 set showcmd
 
 set hlsearch
