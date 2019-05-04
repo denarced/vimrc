@@ -67,6 +67,7 @@ if executable('ag')
     let g:ackprg = 'ag --vimgrep'
 endif
 let g:ackpreview=1
+let g:ackhighlight=1
 
 " tern_for_vim config
 let tern_map_keys = 1
