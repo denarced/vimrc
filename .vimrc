@@ -80,7 +80,7 @@ let g:ale_fix_on_save = 1
 call plug#begin('~/.vim/plugged')
 
 Plug 'mileszs/ack.vim'
-Plug 'w0rp/ale'
+Plug 'w0rp/ale', { 'tag': 'v2.5.0' }
 Plug 'davidhalter/jedi-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'shawncplus/phpcomplete.vim'
@@ -88,18 +88,14 @@ Plug 'tomtom/tcomment_vim'
 Plug 'ternjs/tern_for_vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'chrisbra/unicode.vim'
-Plug 'Lokaltog/vim-easymotion'
+Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-fugitive'
-Plug 'fatih/vim-go', { 'tag': 'v1.19' }
+Plug 'fatih/vim-go', { 'tag': 'v1.20' }
 Plug 'elzr/vim-json'
 Plug 'ludovicchabant/vim-lawrencium'
-" Plug 'joereynolds/vim-minisnip'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['javascript', 'css', 'scss', 'html'] }
-Plug 'rodjek/vim-puppet'
-Plug 'derekwyatt/vim-scala'
-Plug 'tpope/vim-surround'
-Plug 'wellle/visual-split.vim'
 Plug 'sukima/xmledit'
+Plug 'arrufat/vala.vim'
 
 call plug#end()
