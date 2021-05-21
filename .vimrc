@@ -26,6 +26,7 @@ set undofile
 vnoremap < <gv
 vnoremap > >gv
 
+let mapleader = ','
 let xml_jump_string="_jmp_string_"
 
 " Prevent new asterisk when line wraps, add it on enter
@@ -35,14 +36,18 @@ autocmd Filetype cpp setlocal equalprg=astyle
 autocmd Filetype go setlocal noexpandtab
 autocmd Filetype javascript setlocal autoindent equalprg=js-beautify\ -
 autocmd FileType json setlocal equalprg=python3\ -m\ json.tool\ --sort-keys
+autocmd FileType typescript nmap <leader>g <Plug>(ale_go_to_definition)
 autocmd FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
-autocmd FileType yaml setlocal shiftwidth=2 softtabstop=2 tabstop=2
+autocmd FileType yaml setlocal equalprg=/home/denarced/.vim/plugged/vim-prettier/node_modules/.bin/prettier\ --parser\ yaml
 
 autocmd BufReadPost .babelrc set syntax=json
 
 " Otherwise vim thinks ts files are xml files
 autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
 
+autocmd BufNewFile *.sh 0r ~/.vim/templates/skeleton.sh | normal G
+autocmd BufNewFile *.py 0r ~/.vim/templates/skeleton.py | normal 4jw
+autocmd BufNewFile *.json 0r ~/.vim/templates/skeleton.json | normal l
 
 " Enable html editing with xmledit plugin
 let g:xmledit_enable_html = 1
@@ -74,7 +79,8 @@ let tern_map_keys = 1
 let tern_show_argument_hints = 1
 let tern_show_signature_in_pum = 1
 
-let g:ale_fixers = { 'python': ['isort'], 'json': ['fixjson'] }
+let g:ale_completion_enabled = 1
+let g:ale_fixers = { 'python': ['isort'], 'json': ['fixjson', 'prettier'], 'yaml': ['prettier'], 'typescript': ['prettier']}
 let g:ale_fix_on_save = 1
 
 call plug#begin('~/.vim/plugged')
@@ -94,7 +100,7 @@ Plug 'fatih/vim-go', { 'tag': 'v1.20' }
 Plug 'elzr/vim-json'
 Plug 'ludovicchabant/vim-lawrencium'
 Plug 'mustache/vim-mustache-handlebars'
-Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['javascript', 'css', 'scss', 'html'] }
+Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['javascript', 'css', 'scss', 'html', 'typescript'] }
 Plug 'sukima/xmledit'
 Plug 'arrufat/vala.vim'
 
