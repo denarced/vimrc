@@ -44,6 +44,7 @@ autocmd BufReadPost .babelrc set syntax=json
 
 " Otherwise vim thinks ts files are xml files
 autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
+autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
 
 autocmd BufNewFile *.sh 0r ~/.vim/templates/skeleton.sh | normal G
 autocmd BufNewFile *.py 0r ~/.vim/templates/skeleton.py | normal 4jw
@@ -80,7 +81,7 @@ let tern_show_argument_hints = 1
 let tern_show_signature_in_pum = 1
 
 let g:ale_completion_enabled = 1
-let g:ale_fixers = { 'python': ['isort'], 'json': ['fixjson', 'prettier'], 'yaml': ['prettier'], 'typescript': ['prettier']}
+let g:ale_fixers = { 'python': ['isort'], 'json': ['fixjson', 'prettier'], 'yaml': ['prettier'], 'typescript': ['prettier'], 'javascript': ['prettier']}
 let g:ale_fix_on_save = 1
 
 call plug#begin('~/.vim/plugged')
@@ -101,7 +102,7 @@ Plug 'elzr/vim-json'
 Plug 'ludovicchabant/vim-lawrencium'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['javascript', 'css', 'scss', 'html', 'typescript'] }
+Plug 'evanleck/vim-svelte', { 'branch': 'main' }
 Plug 'sukima/xmledit'
-Plug 'arrufat/vala.vim'
 
 call plug#end()
