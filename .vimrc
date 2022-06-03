@@ -95,6 +95,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'ternjs/tern_for_vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'chrisbra/unicode.vim'
+Plug 'tpope/vim-dispatch'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-fugitive'
 Plug 'fatih/vim-go', { 'tag': 'v1.20' }
@@ -104,5 +105,6 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['javascript', 'css', 'scss', 'html', 'typescript'] }
 Plug 'evanleck/vim-svelte', { 'branch': 'main' }
 Plug 'sukima/xmledit'
+Plug '5long/pytest-vim-compiler'
 
 call plug#end()
