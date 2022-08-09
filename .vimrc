@@ -82,13 +82,13 @@ let tern_show_argument_hints = 1
 let tern_show_signature_in_pum = 1
 
 let g:ale_completion_enabled = 1
-let g:ale_fixers = { 'python': ['isort'], 'json': ['fixjson', 'prettier'], 'yaml': ['prettier'], 'typescript': ['prettier'], 'javascript': ['prettier']}
+let g:ale_fixers = {'python': ['autoimport', 'isort'], 'json': ['fixjson', 'prettier'], 'yaml': ['prettier'], 'typescript': ['prettier'], 'javascript': ['prettier']}
 let g:ale_fix_on_save = 1
 
 call plug#begin('~/.vim/plugged')
 
 Plug 'mileszs/ack.vim'
-Plug 'w0rp/ale', { 'tag': 'v2.5.0' }
+Plug 'w0rp/ale', { 'tag': 'v3.2.0' }
 Plug 'davidhalter/jedi-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'shawncplus/phpcomplete.vim'
