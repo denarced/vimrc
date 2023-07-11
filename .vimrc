@@ -92,7 +92,7 @@ let g:ale_linters = {'go': ['gofmt', 'golint', 'gopls', 'govet', 'revive']}
 call plug#begin('~/.vim/plugged')
 
 Plug 'mileszs/ack.vim'
-Plug 'w0rp/ale', { 'tag': 'v3.2.0' }
+Plug 'w0rp/ale', { 'tag': 'v3.3.0' }
 Plug 'davidhalter/jedi-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'shawncplus/phpcomplete.vim'
