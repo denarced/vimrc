@@ -34,6 +34,7 @@ autocmd Filetype asciidoc setlocal formatoptions-=c
 autocmd Filetype asciidoc setlocal formatoptions+=r
 autocmd Filetype cpp setlocal equalprg=astyle
 autocmd Filetype go setlocal noexpandtab
+autocmd FileType go nmap <leader>g <Plug>(ale_go_to_definition)
 autocmd Filetype javascript setlocal autoindent equalprg=js-beautify\ -
 autocmd FileType json setlocal equalprg=python3\ -m\ json.tool\ --sort-keys
 autocmd FileType typescript nmap <leader>g <Plug>(ale_go_to_definition)
@@ -68,6 +69,8 @@ endif
 
 " Run goimports on save instead of gofmt, it covers both
 let g:go_fmt_command = "goimports"
+" Use new vim 8.2 popup windows for Go Doc
+let g:go_doc_popup_window = 1
 
 " Use ag with ack
 if executable('ag')
@@ -82,8 +85,9 @@ let tern_show_argument_hints = 1
 let tern_show_signature_in_pum = 1
 
 let g:ale_completion_enabled = 1
-let g:ale_fixers = {'python': ['autoimport', 'isort'], 'json': ['fixjson', 'prettier'], 'yaml': ['prettier'], 'typescript': ['prettier'], 'javascript': ['prettier']}
+let g:ale_fixers = {'python': ['autoimport', 'isort'], 'json': ['fixjson', 'prettier'], 'yaml': ['prettier'], 'typescript': ['prettier'], 'javascript': ['prettier'], 'go': ['golines']}
 let g:ale_fix_on_save = 1
+let g:ale_linters = {'go': ['gofmt', 'golint', 'gopls', 'govet', 'revive']}
 
 call plug#begin('~/.vim/plugged')
 
@@ -99,7 +103,7 @@ Plug 'chrisbra/unicode.vim'
 Plug 'tpope/vim-dispatch'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-fugitive'
-Plug 'fatih/vim-go', { 'tag': 'v1.20' }
+Plug 'fatih/vim-go', { 'tag': 'v1.28' }
 Plug 'elzr/vim-json'
 Plug 'ludovicchabant/vim-lawrencium'
 Plug 'mustache/vim-mustache-handlebars'
