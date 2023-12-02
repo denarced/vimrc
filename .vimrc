@@ -39,7 +39,7 @@ autocmd Filetype javascript setlocal autoindent equalprg=js-beautify\ -
 autocmd FileType json setlocal equalprg=python3\ -m\ json.tool\ --sort-keys
 autocmd FileType typescript nmap <leader>g <Plug>(ale_go_to_definition)
 autocmd FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
-autocmd FileType yaml setlocal equalprg=/home/denarced/.vim/plugged/vim-prettier/node_modules/.bin/prettier\ --parser\ yaml
+autocmd FileType yaml setlocal equalprg=prettier\ --parser\ yaml
 
 autocmd BufReadPost .babelrc set syntax=json
 autocmd BufRead test_*.py compiler pytest
@@ -84,8 +84,8 @@ let tern_map_keys = 1
 let tern_show_argument_hints = 1
 let tern_show_signature_in_pum = 1
 
-let g:ale_completion_enabled = 1
-let g:ale_fixers = {'python': ['autoimport', 'isort'], 'json': ['fixjson', 'prettier'], 'yaml': ['prettier'], 'typescript': ['prettier'], 'javascript': ['prettier'], 'go': ['golines']}
+let g:ale_completion_enabled = 0
+let g:ale_fixers = {'python': ['autoimport', 'isort', 'black'], 'json': ['fixjson', 'prettier'], 'yaml': ['prettier'], 'typescript': ['prettier'], 'javascript': ['prettier'], 'go': ['golines']}
 let g:ale_fix_on_save = 1
 let g:ale_linters = {'go': ['gofmt', 'golint', 'gopls', 'govet', 'revive']}
 
@@ -95,9 +95,7 @@ Plug 'mileszs/ack.vim'
 Plug 'w0rp/ale', { 'tag': 'v3.3.0' }
 Plug 'davidhalter/jedi-vim'
 Plug 'itchyny/lightline.vim'
-Plug 'shawncplus/phpcomplete.vim'
 Plug 'tomtom/tcomment_vim'
-Plug 'ternjs/tern_for_vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'chrisbra/unicode.vim'
 Plug 'tpope/vim-dispatch'
@@ -107,7 +105,6 @@ Plug 'fatih/vim-go', { 'tag': 'v1.28' }
 Plug 'elzr/vim-json'
 Plug 'ludovicchabant/vim-lawrencium'
 Plug 'mustache/vim-mustache-handlebars'
-Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['javascript', 'css', 'scss', 'html', 'typescript'] }
 Plug 'evanleck/vim-svelte', { 'branch': 'main' }
 Plug 'sukima/xmledit'
 Plug '5long/pytest-vim-compiler'
