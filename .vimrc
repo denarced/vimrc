@@ -85,9 +85,9 @@ let tern_show_argument_hints = 1
 let tern_show_signature_in_pum = 1
 
 let g:ale_completion_enabled = 0
-let g:ale_fixers = {'python': ['autoimport', 'isort', 'black'], 'json': ['fixjson', 'prettier'], 'yaml': ['prettier'], 'typescript': ['prettier'], 'javascript': ['prettier'], 'go': ['golines']}
+let g:ale_fixers = {'python': ['autoimport', 'isort', 'ruff_format'], 'json': ['fixjson', 'prettier'], 'yaml': ['prettier'], 'typescript': ['prettier'], 'javascript': ['prettier', 'eslint'], 'go': ['golines'], 'scss': ['prettier']}
 let g:ale_fix_on_save = 1
-let g:ale_linters = {'go': ['gofmt', 'golint', 'gopls', 'govet', 'revive']}
+let g:ale_linters = {'go': ['gofmt', 'golint', 'gopls', 'govet', 'revive'], 'python': ['ruff']}
 
 call plug#begin('~/.vim/plugged')
 
