@@ -66,7 +66,7 @@ let g:vim_json_syntax_conceal = 0
 " Always show status line
 se laststatus=2
 let g:lightline = {
-      \ 'colorscheme': 'Tomorrow',
+      \ 'colorscheme': 'molokai',
       \ }
 if !has('gui_running')
   set t_Co=256
@@ -97,21 +97,19 @@ let g:ale_linters = {'go': ['gofmt', 'golint', 'gopls', 'govet', 'revive'], 'pyt
 call plug#begin('~/.vim/plugged')
 
 Plug 'mileszs/ack.vim'
-Plug 'w0rp/ale', { 'tag': 'v3.3.0' }
+Plug 'w0rp/ale'
 Plug 'davidhalter/jedi-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'leafgarland/typescript-vim'
+Plug 'SirVer/ultisnips', { 'tag': '3.2' }
 Plug 'chrisbra/unicode.vim'
-Plug 'tpope/vim-dispatch'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-fugitive'
 Plug 'fatih/vim-go', { 'tag': 'v1.28' }
 Plug 'elzr/vim-json'
 Plug 'ludovicchabant/vim-lawrencium'
-Plug 'mustache/vim-mustache-handlebars'
-Plug 'evanleck/vim-svelte', { 'branch': 'main' }
+Plug 'honza/vim-snippets'
 Plug 'sukima/xmledit'
-Plug '5long/pytest-vim-compiler'
 
 call plug#end()
