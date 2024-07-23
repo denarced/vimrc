@@ -12,9 +12,11 @@ set relativenumber
 set showcmd
 
 set hlsearch
+set incsearch
 " Works better on terminal with black background. At least can read highlighted
 " text.
-hi Search cterm=NONE ctermfg=black ctermbg=yellow
+colorscheme slate
+hi Search ctermfg=black
 set nowrapscan
 set nowrap
 
@@ -25,6 +27,9 @@ set undofile
 "Reselect visual block after indent/outdent
 vnoremap < <gv
 vnoremap > >gv
+
+set foldmethod=indent
+set nofoldenable
 
 let mapleader = ','
 let xml_jump_string="_jmp_string_"
