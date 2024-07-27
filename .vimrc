@@ -47,7 +47,6 @@ autocmd FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/n
 autocmd FileType yaml setlocal equalprg=prettier\ --parser\ yaml
 
 autocmd BufReadPost .babelrc set syntax=json
-autocmd BufRead test_*.py compiler pytest
 
 " Otherwise vim thinks ts files are xml files
 autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
