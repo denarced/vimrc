@@ -39,7 +39,11 @@ autocmd Filetype asciidoc setlocal formatoptions-=c
 autocmd Filetype asciidoc setlocal formatoptions+=r
 autocmd Filetype cpp setlocal equalprg=astyle
 autocmd Filetype go setlocal noexpandtab
+autocmd Filetype go setlocal tw=100
 autocmd FileType go nmap <leader>g <Plug>(ale_go_to_definition)
+autocmd FileType go nmap <leader>e <Plug>(go-if-err)
+autocmd FileType go nmap <leader>f <Plug>(go-fill-struct)
+autocmd FileType go nmap <leader>t <Plug>(go-test)
 autocmd Filetype javascript setlocal autoindent equalprg=js-beautify\ -
 autocmd FileType json setlocal equalprg=python3\ -m\ json.tool\ --sort-keys
 autocmd FileType typescript nmap <leader>g <Plug>(ale_go_to_definition)
@@ -88,7 +92,7 @@ let tern_map_keys = 1
 let tern_show_argument_hints = 1
 let tern_show_signature_in_pum = 1
 
-let g:ale_completion_enabled = 0
+let g:ale_completion_enabled = 1
 let g:ale_fixers = {'python': ['autoimport', 'isort', 'ruff_format'], 'json': ['fixjson', 'prettier'], 'yaml': ['prettier'], 'typescript': ['prettier'], 'javascript': ['prettier', 'eslint'], 'go': ['golines'], 'scss': ['prettier']}
 let g:ale_fix_on_save = 1
 let g:ale_linters = {'go': ['gofmt', 'golint', 'gopls', 'govet', 'revive'], 'python': ['ruff']}
@@ -105,7 +109,7 @@ Plug 'SirVer/ultisnips', { 'tag': '3.2' }
 Plug 'chrisbra/unicode.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-fugitive'
-Plug 'fatih/vim-go', { 'tag': 'v1.28' }
+Plug 'fatih/vim-go'
 Plug 'elzr/vim-json'
 Plug 'ludovicchabant/vim-lawrencium'
 Plug 'honza/vim-snippets'
