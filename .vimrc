@@ -80,9 +80,9 @@ let g:go_fmt_command = "goimports"
 " Use new vim 8.2 popup windows for Go Doc
 let g:go_doc_popup_window = 1
 
-" Use ag with ack
+" Use rg with ack
 if executable('ag')
-    let g:ackprg = 'ag --vimgrep'
+    let g:ackprg = 'rg --vimgrep --smart-case'
 endif
 let g:ackpreview=1
 let g:ackhighlight=1
