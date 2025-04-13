@@ -93,11 +93,15 @@ let tern_show_argument_hints = 1
 let tern_show_signature_in_pum = 1
 
 let g:ale_completion_enabled = 1
+let g:ale_floating_preview = 1
 set completeopt+=noinsert
 let g:ale_fixers = {'sh': ['shfmt'], 'python': ['autoimport', 'ruff_format'], 'json': ['fixjson', 'prettier'], 'yaml': ['prettier'], 'typescript': ['prettier'], 'javascript': ['prettier', 'eslint'], 'go': ['golines'], 'scss': ['prettier']}
 let g:ale_fix_on_save = 1
-let g:ale_linters = {'go': ['gofmt', 'golint', 'gopls', 'govet', 'revive', 'staticcheck'], 'python': ['ruff'], 'yaml': ['yamllint']}
+let g:ale_linters = {'go': ['gofmt', 'golint', 'gopls', 'govet', 'revive', 'staticcheck', 'golangci-lint'], 'python': ['ruff'], 'yaml': ['yamllint']}
 let g:ale_go_revive_options = '-formatter unix'
+
+" Nvim's yaml filetype plugin sets to 2 unless the madness is stopped with this.
+let g:yaml_recommended_style=0
 
 call plug#begin('~/.vim/plugged')
 
@@ -111,7 +115,7 @@ Plug 'SirVer/ultisnips', { 'tag': '3.2' }
 Plug 'chrisbra/unicode.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-fugitive'
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'elzr/vim-json'
 Plug 'ludovicchabant/vim-lawrencium'
 Plug 'honza/vim-snippets'
