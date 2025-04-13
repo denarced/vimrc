@@ -32,19 +32,20 @@ set nofoldenable
 let mapleader = ','
 let xml_jump_string="_jmp_string_"
 
+nmap <leader>g <Plug>(ale_go_to_definition) \| :normal zz <cr>
+
 " Prevent new asterisk when line wraps, add it on enter
 autocmd Filetype asciidoc setlocal formatoptions-=c
 autocmd Filetype asciidoc setlocal formatoptions+=r
 autocmd Filetype cpp setlocal equalprg=astyle
 autocmd Filetype go setlocal noexpandtab
 autocmd Filetype go setlocal tw=100
-autocmd FileType go nmap <leader>g <Plug>(ale_go_to_definition)
 autocmd FileType go nmap <leader>e <Plug>(go-if-err)
 autocmd FileType go nmap <leader>f <Plug>(go-fill-struct)
 autocmd FileType go nmap <leader>t <Plug>(go-test)
+autocmd FileType go nmap <leader>r <Plug>(go-referrers)
 autocmd Filetype javascript setlocal autoindent equalprg=js-beautify\ -
 autocmd FileType json setlocal equalprg=python3\ -m\ json.tool\ --sort-keys
-autocmd FileType typescript nmap <leader>g <Plug>(ale_go_to_definition)
 autocmd FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
 autocmd FileType yaml setlocal equalprg=prettier\ --parser\ yaml
 
