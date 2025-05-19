@@ -32,24 +32,19 @@ set nofoldenable
 let mapleader = ','
 let xml_jump_string="_jmp_string_"
 
-nmap <leader>g <Plug>(ale_go_to_definition) \| :normal zz <cr>
-
+nmap <leader>g <Plug>(ale_go_to_definition)
 " Prevent new asterisk when line wraps, add it on enter
 autocmd Filetype asciidoc setlocal formatoptions-=c
 autocmd Filetype asciidoc setlocal formatoptions+=r
-autocmd Filetype cpp setlocal equalprg=astyle
 autocmd Filetype go setlocal noexpandtab
 autocmd Filetype go setlocal tw=100
 autocmd FileType go nmap <leader>e <Plug>(go-if-err)
 autocmd FileType go nmap <leader>f <Plug>(go-fill-struct)
-autocmd FileType go nmap <leader>t <Plug>(go-test)
 autocmd FileType go nmap <leader>r <Plug>(go-referrers)
-autocmd Filetype javascript setlocal autoindent equalprg=js-beautify\ -
+autocmd FileType go nmap <leader>c <Plug>(go-coverage-toggle)
 autocmd FileType json setlocal equalprg=python3\ -m\ json.tool\ --sort-keys
 autocmd FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
 autocmd FileType yaml setlocal equalprg=prettier\ --parser\ yaml
-
-autocmd BufReadPost .babelrc set syntax=json
 
 " Otherwise vim thinks ts files are xml files
 autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
@@ -74,23 +69,10 @@ if !has('gui_running')
   set t_Co=256
 endif
 
-
 " Run goimports on save instead of gofmt, it covers both
 let g:go_fmt_command = "goimports"
 " Use new vim 8.2 popup windows for Go Doc
 let g:go_doc_popup_window = 1
-
-" Use rg with ack
-if executable('ag')
-    let g:ackprg = 'rg --vimgrep --smart-case'
-endif
-let g:ackpreview=1
-let g:ackhighlight=1
-
-" tern_for_vim config
-let tern_map_keys = 1
-let tern_show_argument_hints = 1
-let tern_show_signature_in_pum = 1
 
 let g:ale_completion_enabled = 1
 let g:ale_floating_preview = 1
@@ -103,22 +85,38 @@ let g:ale_go_revive_options = '-formatter unix'
 " Nvim's yaml filetype plugin sets to 2 unless the madness is stopped with this.
 let g:yaml_recommended_style=0
 
+" Search word under cursor.
+nnoremap <silent><Leader>s :Rg <C-R><C-W><CR>
+
+" Alt (default) doesn't work at all and workarounds are system specific so I'd
+" rather use control. I haven't heard it being dependent on the keyboard layout.
+let g:move_key_modifier = 'C'
+let g:move_key_modifier_visualmode = 'C'
+
 call plug#begin('~/.vim/plugged')
 
-Plug 'mileszs/ack.vim'
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale', { 'tag': 'v4.0.0' }
+Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'davidhalter/jedi-vim'
 Plug 'itchyny/lightline.vim'
+Plug 'raimon49/requirements.txt.vim'
 Plug 'tomtom/tcomment_vim'
-Plug 'leafgarland/typescript-vim'
 Plug 'SirVer/ultisnips', { 'tag': '3.2' }
 Plug 'chrisbra/unicode.vim'
+Plug 'sebdah/vim-delve'
 Plug 'easymotion/vim-easymotion'
+Plug 'terryma/vim-expand-region'
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'elzr/vim-json'
 Plug 'ludovicchabant/vim-lawrencium'
+Plug 'pbrisbin/vim-mkdir'
+Plug 'matze/vim-move'
 Plug 'honza/vim-snippets'
+Plug 'dhruvasagar/vim-table-mode'
 Plug 'sukima/xmledit'
 
 call plug#end()
