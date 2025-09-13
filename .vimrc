@@ -54,6 +54,12 @@ autocmd BufNewFile *.sh 0r ~/.vim/templates/skeleton.sh | normal G
 autocmd BufNewFile *.py 0r ~/.vim/templates/skeleton.py | normal 4jw
 autocmd BufNewFile *.json 0r ~/.vim/templates/skeleton.json | normal l
 
+" Show matches as you move through them.
+autocmd CursorMoved,CursorMovedI *
+      \ if &buftype == "quickfix" && getcmdwintype() == ''
+      \ | execute "normal! \<CR>zz\<C-W>p"
+      \ | endif
+
 " Enable html editing with xmledit plugin
 let g:xmledit_enable_html = 1
 
@@ -96,7 +102,6 @@ let g:move_key_modifier_visualmode = 'C'
 call plug#begin('~/.vim/plugged')
 
 Plug 'dense-analysis/ale', { 'tag': 'v4.0.0' }
-Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'davidhalter/jedi-vim'
