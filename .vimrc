@@ -79,6 +79,7 @@ endif
 let g:go_fmt_command = "goimports"
 " Use new vim 8.2 popup windows for Go Doc
 let g:go_doc_popup_window = 1
+let g:go_auto_sameids = 1
 
 let g:ale_completion_enabled = 1
 let g:ale_floating_preview = 1
