@@ -80,10 +80,10 @@ let g:go_fmt_command = "goimports"
 " Use new vim 8.2 popup windows for Go Doc
 let g:go_doc_popup_window = 1
 
-# Turn on highlight current variable under cursor.
+" Turn on highlight current variable under cursor.
 let g:go_auto_sameids = 1
-# Set color that's different than the default: search highlight. Quite often
-# both are visible and it's confusing when they use the same color.
+" Set color that's different than the default: search highlight. Quite often
+" both are visible and it's confusing when they use the same color.
 hi link goSameId Visual
 
 let g:ale_completion_enabled = 1
