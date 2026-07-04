@@ -90,7 +90,7 @@ hi link goSameId Visual
 let g:ale_completion_enabled = 1
 let g:ale_floating_preview = 1
 set completeopt+=noinsert
-let g:ale_fixers = {'sh': ['shfmt'], 'python': ['autoimport', 'ruff_format'], 'json': ['fixjson', 'prettier'], 'yaml': ['prettier'], 'typescript': ['prettier'], 'javascript': ['prettier', 'eslint'], 'go': ['golines'], 'scss': ['prettier']}
+let g:ale_fixers = {'sh': ['shfmt'], 'python': ['autoimport', 'ruff_format'], 'json': ['fixjson', 'prettier'], 'yaml': ['prettier'], 'typescript': ['prettier'], 'javascript': ['prettier', 'eslint'], 'go': ['golines'], 'scss': ['prettier'], 'sql': ['pgformatter']}
 let g:ale_fix_on_save = 1
 let g:ale_linters = {'go': ['gofmt', 'golint', 'gopls', 'govet', 'revive', 'staticcheck', 'golangci-lint'], 'python': ['ruff'], 'yaml': ['yamllint']}
 let g:ale_go_revive_options = '-formatter unix'
