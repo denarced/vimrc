@@ -100,6 +100,7 @@ let g:yaml_recommended_style=0
 
 " Search word under cursor.
 nnoremap <silent><Leader>s :Rg <C-R><C-W><CR>
+au FileType go nmap <leader>a <Plug>(go-alternate-edit)
 
 " Alt (default) doesn't work at all and workarounds are system specific so I'd
 " rather use control. I haven't heard it being dependent on the keyboard layout.
