@@ -115,6 +115,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'davidhalter/jedi-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'raimon49/requirements.txt.vim'
+Plug 'AndrewRadev/splitjoin.vim', { 'tag': 'v1.2.0' }
 Plug 'tomtom/tcomment_vim'
 Plug 'SirVer/ultisnips', { 'tag': '3.2' }
 Plug 'chrisbra/unicode.vim'
